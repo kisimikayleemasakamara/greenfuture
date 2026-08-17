@@ -43,7 +43,12 @@ public class SecurityConfig {
                                                 .requestMatchers("/api/files/**").authenticated()
 
                                                 // Public routes
-                                                .requestMatchers("/api/auth/**").permitAll()
+                                                .requestMatchers("/api/auth/login").permitAll()
+                                                .requestMatchers(
+                                                                "/api/v1/auth/login",
+                                                                "/api/v1/auth/refresh",
+                                                                "/api/v1/auth/logout")
+                                                .permitAll()
 
                                                 // ADMIN ONLY
                                                 .requestMatchers("/api/admin/**")

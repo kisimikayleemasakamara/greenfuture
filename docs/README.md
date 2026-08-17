@@ -42,3 +42,27 @@ These documents are the authoritative planning baseline for the Cleanest & Green
 - Production account ownership, billing, domains, monitoring, and incident contacts
 
 No application implementation should contradict these specifications without an explicit reviewed documentation change.
+
+## Local backend setup
+
+1. Copy `.env.example` to `.env` and replace every placeholder. Never commit `.env`.
+2. Generate the JWT signing secret once with:
+
+   ```bash
+   openssl rand -base64 48
+   ```
+
+   Store the output as `JWT_SECRET_BASE64` in `.env`. Do not reuse this value between local, preview, and production environments.
+
+3. Export the local file before starting Spring Boot, because Spring Boot does not load `.env` files by itself:
+
+   ```bash
+   set -a
+   source .env
+   set +a
+   mvn spring-boot:run
+   ```
+
+4. Run the isolated automated suite with `mvn test`. Tests use H2 and test-only credentials, so they do not access the local PostgreSQL database or `.env` secrets.
+
+The access-token lifetime defaults to 15 minutes. Production and preview secrets must be configured directly in the hosting platform rather than uploaded as files.

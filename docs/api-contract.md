@@ -112,6 +112,30 @@ Role and assignment mutations require an audit reason.
 
 Community list filters include lifecycle status, district, assignment, eligibility, and search term.
 
+Initial registration request:
+
+```json
+{
+  "name": "Example Community",
+  "ward": "Ward 1",
+  "chiefdom": "Example Chiefdom",
+  "district": "Example District",
+  "estimatedHouseholds": 450,
+  "estimatedPopulation": 2300,
+  "estimatedWomen": 1200,
+  "estimatedYouth15To35": 700,
+  "estimatedPersonsWithDisabilities": 85,
+  "demographicsAsOfDate": "2026-08-17",
+  "demographicsSource": "COMMUNITY_LEADER_ESTIMATE",
+  "communityLeaderName": "Example Leader",
+  "communityLeaderPhone": "+23200000000",
+  "communityFocalPersonName": "Example Focal Person",
+  "communityFocalPersonPhone": "+23200000000"
+}
+```
+
+Only `name` is required for initial registration. The remaining values can be completed or corrected before baseline submission. The API normalizes phone numbers where possible and never returns contact fields through public community responses.
+
 ## 6. Baseline questionnaires and assessments
 
 ### Questionnaire administration

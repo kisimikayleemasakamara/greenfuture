@@ -19,6 +19,8 @@ It is an engineering baseline, not a substitute for organizational/legal approva
 
 Data is private/internal unless explicitly mapped into a public response and approved for publication.
 
+Community leader and focal-person names/phone numbers are restricted operational contacts. Demographic subgroup counts are internal by default and may be published only as approved aggregates that do not expose individuals.
+
 ## 3. Collection principles
 
 - Collect only information required for programme operations, verification, scoring, safeguarding, or approved reporting.
@@ -191,4 +193,3 @@ The operational owner must be able to:
 - Production backup plan and recovery objectives
 - Incident contacts and escalation path
 - Account ownership for Render and Cloudflare
-

@@ -64,6 +64,26 @@ Rules:
 
 Community existence, eligibility, and competition participation are separate concepts.
 
+### Initial community registration
+
+The initial registration captures:
+
+- Community name (required)
+- Ward
+- Chiefdom
+- District
+- Estimated households
+- Estimated population
+- Estimated women population
+- Estimated youth population, ages 15–35
+- Estimated persons with disabilities
+- Community leader name
+- Community leader phone
+- Community focal-person name
+- Community focal-person phone
+
+All fields except community name are optional at initial registration and may be completed or corrected during the baseline process. Demographic values are estimates with an as-of date and source where available. Phone numbers and named contacts are restricted operational data and are never public by default.
+
 ### Community lifecycle
 
 ```text

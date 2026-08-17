@@ -154,7 +154,8 @@ Desktop sidebar:
 | `/app/admin/users` | User list, invitations, roles, and status |
 | `/app/admin/users/:id` | User roles and community assignments |
 | `/app/admin/communities` | Community management |
-| `/app/admin/communities/:id` | Profile, lifecycle, eligibility, assignments, and history |
+| `/app/admin/communities/new` | Register community identity, geography, demographics, leader, and focal person |
+| `/app/admin/communities/:id` | Profile, demographics, contacts, lifecycle, eligibility, assignments, and history |
 | `/app/admin/questionnaires` | Questionnaire/version list |
 | `/app/admin/questionnaires/:id/versions/:version` | Draft questionnaire editor/read-only published version |
 | `/app/admin/competitions` | Competition management |
