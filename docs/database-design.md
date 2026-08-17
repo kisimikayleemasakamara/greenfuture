@@ -101,6 +101,26 @@ Links a user to a community with assignment type, start/end dates, status, and a
 
 Stores identity and profile information, location, internal visibility, public profile status, lifecycle status, timestamps, and `row_version`.
 
+Initial registration fields:
+
+- `name` — required
+- `ward`
+- `chiefdom`
+- `district`
+- `estimated_households`
+- `estimated_population`
+- `estimated_women`
+- `estimated_youth_15_35`
+- `estimated_persons_with_disabilities`
+- `demographics_as_of_date`
+- `demographics_source`
+- `community_leader_name`
+- `community_leader_phone`
+- `community_focal_person_name`
+- `community_focal_person_phone`
+
+Counts use non-negative integers. Individual demographic subgroup counts cannot exceed estimated population when both are supplied, but subgroup totals are not added together because categories may overlap. Contact names and phone numbers are restricted operational data.
+
 Community rows do not store a competition rank or mutable calculated score.
 
 ### `eligibility_records`

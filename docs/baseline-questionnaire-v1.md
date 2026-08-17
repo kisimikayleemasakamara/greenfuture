@@ -66,6 +66,8 @@ At least two general community photographs are required before submission. Evide
 
 ## 5. Section A — Community identity and contact
 
+Registration profile values are prefilled for review. The assessor confirms or proposes corrections; baseline submission never silently overwrites the registered community profile. Accepted corrections use an audited `editCommunityProfile` use case.
+
 | Code | Prompt | Type | Required | Validation/behavior |
 | --- | --- | --- | --- | --- |
 | `COMMUNITY_NAME_CONFIRMED` | Is the registered community name correct? | `BOOLEAN` | Yes | If No, correction details are required |
@@ -79,6 +81,11 @@ At least two general community photographs are required before submission. Evide
 | `POPULATION_SOURCE` | Source of population estimate | `SINGLE_SELECT` | Conditional | Required when population supplied |
 | `ESTIMATED_HOUSEHOLDS` | Estimated number of households | `INTEGER` | No | 1–2,000,000; source required when supplied |
 | `HOUSEHOLDS_SOURCE` | Source of household estimate | `SINGLE_SELECT` | Conditional | Required when households supplied |
+| `ESTIMATED_WOMEN` | Estimated number of women | `INTEGER` | No | Non-negative and not above population when population supplied |
+| `ESTIMATED_YOUTH_15_35` | Estimated youth ages 15–35 | `INTEGER` | No | Non-negative and not above population when population supplied |
+| `ESTIMATED_PERSONS_WITH_DISABILITIES` | Estimated persons with disabilities | `INTEGER` | No | Non-negative and not above population when population supplied |
+
+Ward, chiefdom, district, community leader, and focal-person values from registration are displayed for confirmation. Proposed corrections are audited and remain private where they contain personal contact information.
 
 Population/household source options:
 

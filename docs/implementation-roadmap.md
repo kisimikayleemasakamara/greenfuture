@@ -67,6 +67,7 @@ Exit criteria:
 Branches: `feature/community-management`
 
 - Community registration/profile
+- Ward, chiefdom, district, household/population demographics, community leader, and focal-person contacts
 - Geographic/reference data
 - User management and multiple roles
 - Field/Community Officer assignments

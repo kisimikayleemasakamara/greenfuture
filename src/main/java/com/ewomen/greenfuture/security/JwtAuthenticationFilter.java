@@ -49,12 +49,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (authHeader != null && authHeader.startsWith("Bearer ")) {
             token = authHeader.substring(7);
 
-            try {
-                if (jwtService.isTokenValid(token)) {
-                    email = jwtService.extractEmail(token);
-                }
-            } catch (Exception e) {
-                System.out.println("JWT Error: " + e.getMessage());
+            if (jwtService.isTokenValid(token)) {
+                email = jwtService.extractEmail(token);
             }
         }
 
@@ -69,16 +65,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             // 1. ROLE (Spring standard)
             String role = user.getRole().name();
 
-            // TEST TO BE REMOVED
-            System.out.println("ROLE FROM DB = " + role);
-
             authorities.add(
                     new SimpleGrantedAuthority("ROLE_" + role));
-
-            // DEBUGING
-            System.out.println("Email = " + email);
-            System.out.println("Role = " + role);
-            System.out.println("Authorities = " + authorities);
 
             // 2. PERMISSIONS (FROM RolePermissions CLASS — FIXED)
             List<String> permissions = RolePermissions.getPermissions(role);
@@ -99,11 +87,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
             SecurityContextHolder.getContext().setAuthentication(authToken);
         }
-
-        System.out.println("=================================");
-        System.out.println("REQUEST: " + request.getRequestURI());
-        System.out.println("AUTH: " + SecurityContextHolder.getContext().getAuthentication());
-        System.out.println("=================================");
 
         filterChain.doFilter(request, response);
     }
